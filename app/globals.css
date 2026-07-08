@@ -135,6 +135,7 @@ h2 {
   color: var(--text-main);
   background: linear-gradient(135deg, var(--text-main) 40%, var(--text-muted) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -248,6 +249,7 @@ header {
   color: var(--text-main);
   background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.05em;
 }
@@ -668,6 +670,7 @@ nav ul li a.active::after {
 .gradient-text {
   background: linear-gradient(135deg, var(--text-main) 20%, var(--accent-rose) 60%, var(--accent-violet) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
 }
@@ -778,6 +781,7 @@ nav ul li a.active::after {
   font-weight: 800;
   background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
   margin-bottom: 0.5rem;
@@ -1509,6 +1513,7 @@ footer {
   letter-spacing: -0.05em;
   background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: logoGlowPulse 2s infinite alternate ease-in-out;
   position: relative;
