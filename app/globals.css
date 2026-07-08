@@ -1882,3 +1882,106 @@ footer {
     max-width: calc(100vw - 2rem) !important;
   }
 }
+
+/* Mobile Responsive Styling Overrides */
+@media (max-width: 768px) {
+  /* Header & Navigation Mobile Menu */
+  .menu-btn {
+    display: block;
+    z-index: 101;
+  }
+
+  /* Hamburger transform when menu is open */
+  .menu-btn.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-btn.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100vh;
+    background: rgba(14, 8, 24, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-left: 1px solid var(--border-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 99;
+  }
+
+  nav ul.open {
+    right: 0;
+  }
+
+  /* Reduce Hero Spacing & Sizes for Mobile */
+  #hero {
+    padding: 6rem 1rem 3rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem !important;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem !important;
+  }
+
+  /* About responsive spacing */
+  #about {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .about-img-wrapper {
+    margin: 0 auto;
+    max-width: 260px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Experience & Projects grids */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .certs-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cert-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.8rem;
+  }
+
+  /* Contact section */
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* Reduce general section padding for smaller screen viewports */
+  section {
+    padding: 4rem 1.5rem !important;
+  }
+}
