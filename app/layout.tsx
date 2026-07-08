@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ashwin Santhanakrishnan | AI Data Analyst & Power Platform Developer",
-  description: "Portfolio of Ashwin Santhanakrishnan, a Data Professional specializing in AI data analysis, data engineering, Power BI dashboards, Power Apps, and automated ETL pipelines.",
-  keywords: ["Ashwin Santhanakrishnan", "Data Analyst", "Power Apps Developer", "Power BI", "Data Engineer", "ETL", "Python", "SQL", "Microsoft Power Platform"],
+  title: "Ashwin Santhanakrishnan | AI Engineer & Data Professional",
+  description: "Portfolio of Ashwin Santhanakrishnan, an AI Engineer and Data Professional specializing in AI data analysis, data engineering, Power Platform development, and machine learning pipelines.",
+  keywords: ["Ashwin Santhanakrishnan", "AI Engineer", "AI Data Analyst", "Power Apps Developer", "Power BI", "Data Engineer", "ETL", "Python", "SQL", "Microsoft Power Platform", "Machine Learning", "Vibe Coding"],
   authors: [{ name: "Ashwin Santhanakrishnan" }],
   icons: {
     icon: "/favicon.svg",

@@ -14,7 +14,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [showLoader, setShowLoader] = useState(true);
-  
+
   // Contact Form state
   const [formName, setFormName] = useState('');
   const [formEmail, setFormEmail] = useState('');
@@ -43,8 +43,7 @@ export default function Home() {
     'AI Engineer',
     'AI Data Analyst',
     'Power Platform Developer',
-    'Data Engineer',
-    'Business Intelligence Expert'
+    'Data Engineer'
   ];
 
   // Typing effect hook
@@ -57,7 +56,7 @@ export default function Home() {
 
     function typeLoop() {
       const currentRole = roles[roleIndex];
-      
+
       if (isDeleting) {
         setTypedText(currentRole.substring(0, charIndex - 1));
         charIndex--;
@@ -161,7 +160,7 @@ export default function Home() {
     setFormSending(true);
 
     const formEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/mdarvdvy";
-    
+
     if (formEndpoint === "https://formspree.io/f/placeholder") {
       setTimeout(() => {
         setFormSending(false);
@@ -239,7 +238,7 @@ export default function Home() {
 
     // === WHO IS ASHWIN / ABOUT / GENERAL ===
     if (hasAny(['who is ashwin', 'tell me about ashwin', 'about ashwin', 'introduce', 'who are you', 'what do you do', 'summary', 'background', 'overview'])) {
-      return "Ashwin Santhanakrishnan is a **Data Professional & Power Platform Developer** based in the Washington D.C. area. He holds an MS in Data Analytics from Catholic University of America and a BS in Computer Engineering from SUNY. He specializes in AI data analysis, Power BI dashboards, Power Apps development, Python ETL pipelines, and machine learning. He has worked on government data applications at NIH and e-commerce analytics roles. He's also an active user of AI tools like Cursor AI, Claude AI, and n8n.";
+      return "Ashwin Santhanakrishnan is an **AI Engineer & Data Professional** based in the Washington D.C. area. He holds an MS in Data Analytics from Catholic University of America and a BS in Computer Engineering from SUNY. He specializes in AI engineering, data analysis, Power BI dashboards, Power Apps development, Python ETL pipelines, and machine learning. He has worked on government data applications at NIH and e-commerce analytics roles. He's also an active user of AI tools like Cursor AI, Claude AI, and n8n.";
     }
 
     // === PROJECTS ===
@@ -264,14 +263,14 @@ export default function Home() {
       if (hasAny(['python', 'pandas', 'scikit', 'numpy'])) {
         return "🐍 Ashwin is highly proficient in **Python** for data analysis, machine learning, and automation. He uses libraries like Pandas, NumPy, Scikit-Learn, and Matplotlib regularly in his projects and professional work.";
       }
-      if (hasAny(['sql', 'database', 'dataverse', 'sql server', 'mysql'])) {
-        return "🗄️ Ashwin has strong SQL skills across **SQL Server, MySQL, and SQLite**. He designs relational data models, writes complex joins and aggregations in DAX, and manages Microsoft Dataverse databases for Power Platform applications.";
+      if (hasAny(['sql', 'database', 'dataverse', 'sql server', 'mysql', 'postgresql', 'postgres'])) {
+        return "🗄️ Ashwin has strong SQL skills across **SQL Server, MySQL, SQLite, and PostgreSQL**. He designs relational data models, writes complex joins and aggregations in DAX, and manages Microsoft Dataverse databases for Power Platform applications.";
       }
       if (hasAny(['power bi', 'power apps', 'power automate', 'power platform', 'microsoft'])) {
         return "📊 Ashwin is a **Microsoft Power Platform** specialist. He builds canvas and model-driven Power Apps, designs automated workflows with Power Automate, creates interactive Power BI dashboards, and manages Dataverse data architecture. He holds both Power Platform certifications.";
       }
-      if (hasAny(['ai tool', 'cursor', 'claude', 'n8n', 'vapi', 'manus', 'antigravity', 'codex'])) {
-        return "🤖 Ashwin actively uses cutting-edge AI tools in his workflow:<br><ul><li><strong>Cursor AI</strong> — Vibe coding & prompt engineering</li><li><strong>Claude AI</strong> — Complex reasoning and writing</li><li><strong>OpenAI Codex</strong> — Code generation</li><li><strong>Google Antigravity</strong> — Agentic coding</li><li><strong>Vapi AI</strong> — Voice AI applications</li><li><strong>n8n</strong> — Workflow automation</li><li><strong>Manus</strong> — Autonomous AI agents</li><li><strong>Google AI Studio</strong> — Gemini experiments</li></ul>";
+      if (hasAny(['ai tool', 'cursor', 'claude', 'n8n', 'vapi', 'manus', 'antigravity', 'codex', 'studio ai'])) {
+        return "🤖 Ashwin actively uses cutting-edge AI tools in his workflow:<br><ul><li><strong>Cursor AI</strong> — Vibe coding & prompt engineering</li><li><strong>Claude AI</strong> — Complex reasoning and writing</li><li><strong>OpenAI Codex</strong> — Code generation</li><li><strong>Google Antigravity</strong> — Agentic coding</li><li><strong>Vapi AI</strong> — Voice AI applications</li><li><strong>n8n</strong> — Workflow automation</li><li><strong>Manus</strong> — Autonomous AI agents</li><li><strong>Google Studio AI</strong> — Gemini experiments</li></ul>";
       }
       if (hasAny(['tableau', 'looker', 'google looker', 'visualization'])) {
         return "📈 Ashwin is skilled in **data visualization tools** including Microsoft Power BI, Tableau, and Google Looker Studio. He designs executive dashboards that combine clean layouts with actionable KPI tracking.";
@@ -279,18 +278,18 @@ export default function Home() {
       if (hasAny(['r language', 'rstudio', 'ggplot'])) {
         return "📉 Ashwin is proficient in **R** for statistical computing and data analysis, often using it for exploratory data analysis (EDA), visualization with ggplot2, and academic research projects.";
       }
-      return "Ashwin's full technical skill set:<br><ul><li>🐍 <strong>Languages</strong>: Python, SQL, DAX, JavaScript, R</li><li>📊 <strong>BI Tools</strong>: Power BI, Tableau, Looker Studio, Paginated Report Builder</li><li>⚙️ <strong>Platforms</strong>: Power Apps, Power Automate, Dataverse, Azure DevOps, SharePoint, Oracle Apex</li><li>🗄️ <strong>Databases</strong>: SQL Server, MySQL, SQLite, AWS Console</li><li>🤖 <strong>AI Tools</strong>: Cursor AI, Claude AI, OpenAI Codex, Google Antigravity, Vapi AI, Manus, n8n, Google AI Studio</li></ul>Ask me about any specific tool or technology!";
+      return "Ashwin's full technical skill set:<br><ul><li>🤖 <strong>AI Tools</strong>: Cursor AI, Claude AI, OpenAI Codex, Google Antigravity, Vapi AI, Manus, n8n, Google Studio AI</li><li>🐍 <strong>Programming Languages</strong>: Python, DAX, SQL, JavaScript, R</li><li>📊 <strong>Business Intelligence</strong>: Microsoft Power BI, Tableau, Google Looker Studio, Paginated Report Builder</li><li>⚙️ <strong>Platforms & Tools</strong>: Microsoft Power Apps, Power Automate, Dataverse, Azure DevOps, SharePoint, Oracle Apex, Google Ads, Meta Ads, Amazon Ads</li><li>🗄️ <strong>Databases</strong>: Microsoft Dataverse, SQL Server, MySQL, SQLite, PostgreSQL</li><li>🗂️ <strong>Data Management</strong>: ETL Processes, Data Modeling, Data Migration, Cleaning & Transformation, Automation</li><li>☁️ <strong>Cloud & OS</strong>: AWS Console, Windows, Linux, Mac</li></ul>Ask me about any specific tool or technology!";
     }
 
     // === EXPERIENCE / WORK ===
     if (hasAny(['experience', 'work history', 'where have you worked', 'job', 'company', 'employer', 'career', 'dementia', 'ark', 'nih', 'government', 'role'])) {
       if (hasAny(['dementia', 'ecommerce', 'e-commerce', 'ads', 'roas', 'conversion'])) {
-        return "📈 **AI Data Analyst @ Dementia Aide** (Oct 2025 – May 2026)\n\n• Extracted and analyzed large-scale e-commerce datasets with Python, boosting conversion metrics by **70%**\n• Built automated categorization scripts using Cursor AI and prompt engineering, replacing **15+ hours** of manual spreadsheet work per week\n• Created Power BI dashboards to visualize ad performance\n• Conducted historical analysis on **20+ campaigns** to optimize ROAS above 4.0\n• Managed Google Ads and Meta Ads campaigns with data-driven optimization";
+        return "📈 **AI Data Analyst @ Dementia Aide** (Oct 2025 – May 2026)\n\n• Extracted and analyzed large-scale multi-year e-commerce datasets using Python to identify statistical trends in search term performance, optimizing revenue and key performance metrics by **70%**.\n• Built automated workflow scripts using Vibe coding and prompt engineering in Cursor AI, replacing **15+ hours** of manual spreadsheet categorization of raw CSV exports by processing **26,000+ negative keywords** into platform-ready lists.\n• Created Power BI dashboards to visualize ad performance and user demographics, speeding up internal decision-making.\n• Conducted historical data analysis across **20+ multi-channel campaigns** to formulate data-driven strategies, optimizing Return on Ad Spend (ROAS) to over **4.0** and increasing conversion rates.\n• Formulated data-driven campaigns and continuously monitored and adjusted cross-channel budget allocations to ensure optimal ad spend.";
       }
       if (hasAny(['ark', 'infotech', 'nih', 'power apps', 'government', 'etl', 'playwright'])) {
-        return "💼 **Data Engineer / Power Apps Developer @ Ark Infotech LLC** (May 2023 – Aug 2024)\n\n• Developed **6 data applications** for NIH government projects using Power Apps and Power BI\n• Designed relational data models in **Microsoft Dataverse**, improving data integrity and access\n• Configured **Playwright browser automation** test scripts, reducing manual QA time\n• Built Python-based ETL pipelines and Paginated Reports for complex dataset migration\n• Collaborated on SharePoint integration and Azure DevOps deployment pipelines";
+        return "💼 **Data Engineer / Power Apps Developer @ Ark Infotech LLC** (May 2023 – Aug 2024)\n\n• **NIH Data Applications:** Developed 6 custom data applications integrating Power Apps and Power BI dashboards to enable data-driven reporting and decision-making for government stakeholders.\n• **Dataverse Modeling & Migration:** Designed relational data models in Microsoft Dataverse, successfully migrating and integrating legacy datasets from SharePoint, Excel, and Access databases.\n• **Vibe Coding & Automation:** Configured Playwright MCP setup and used Vibe coding to generate browser automation testing scripts, significantly reducing manual testing cycles and ensuring platform stability.\n• **Python ETL & Workflows:** Built Python-based ETL pipelines and automated Power Automate workflows to clean, structure, and transition complex datasets into relational formats.";
       }
-      return "Ashwin has **2 years of professional experience** across data engineering and AI analytics roles:<br><br>📈 <strong>AI Data Analyst</strong> @ Dementia Aide (Oct 2025 – May 2026)<br>→ Python data analysis, Power BI dashboards, e-commerce optimization, ROAS improvement<br><br>💼 <strong>Data Engineer / Power Apps Developer</strong> @ Ark Infotech LLC (May 2023 – Aug 2024)<br>→ NIH government apps, Power Platform development, ETL pipelines, Playwright automation<br><br>Ask me about either role for more details!";
+      return "Ashwin has **2 years of professional experience** across AI engineering, data engineering, and analytics roles:<br><br>📈 <strong>AI Data Analyst</strong> @ Dementia Aide (Oct 2025 – May 2026)<br>→ Large-scale e-commerce datasets, Vibe coding workflow automation, ROAS & conversion optimization<br><br>💼 <strong>Data Engineer / Power Apps Developer</strong> @ Ark Infotech LLC (May 2023 – Aug 2024)<br>→ NIH Data Apps, Dataverse modeling, Python ETL, Playwright automation<br><br>Ask me about either role for more details!";
     }
 
     // === EDUCATION ===
@@ -305,7 +304,7 @@ export default function Home() {
 
     // === CONTACT ===
     if (hasAny(['contact', 'email', 'phone', 'hire', 'reach', 'get in touch', 'connect', 'available', 'work together', 'collaborate'])) {
-      return "📬 You can reach Ashwin directly:<br><br>📧 <strong>Email</strong>: <a href='mailto:ashwin638525@gmail.com'>ashwin638525@gmail.com</a><br>📞 <strong>Phone</strong>: (301) 466 0040<br>🐙 <strong>GitHub</strong>: <a href='https://github.com/AshwinSanthanakrishnan' target='_blank'>github.com/AshwinSanthanakrishnan</a><br><br>Or use the <strong>Contact Form</strong> at the bottom of this page to drop him a message directly!";
+      return "📬 You can reach Ashwin directly:<br><br>📧 <strong>Email</strong>: <a href='mailto:ashwin638525@gmail.com'>ashwin638525@gmail.com</a><br>📞 <strong>Phone</strong>: (301) 466 0040<br>🐙 <strong>GitHub</strong>: <a href='https://github.com/AshwinSanthanakrishnan' target='_blank'>github.com/AshwinSanthanakrishnan</a><br>💼 <strong>LinkedIn</strong>: <a href='https://linkedin.com/in/ashwin-santhanakrishanan-24abb1190' target='_blank'>linkedin.com/in/ashwin-santhanakrishanan-24abb1190</a><br><br>Or use the <strong>Contact Form</strong> at the bottom of this page to drop him a message directly!";
     }
 
     // === PERSONALITY / FUN ===
@@ -401,9 +400,8 @@ export default function Home() {
       {/* Header */}
       <header className={scrolled ? 'scroll-nav' : ''}>
         <div className="nav-container">
-          <a href="#hero" className="logo" onClick={() => setMobileMenuOpen(false)}>AS.</a>
-          <button 
-            className={`menu-btn ${mobileMenuOpen ? 'open' : ''}`} 
+          <button
+            className={`menu-btn ${mobileMenuOpen ? 'open' : ''}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Menu"
           >
@@ -435,7 +433,7 @@ export default function Home() {
             <span className="typewriter">{typedText}</span>
           </h1>
           <p className="hero-desc">
-            Data Professional & AI Analyst. Ask my AI assistant anything about my skills, projects, or experience!
+            AI Engineer & Data Professional. Ask my AI assistant anything about my skills, projects, or experience!
           </p>
 
           <div
@@ -517,7 +515,7 @@ export default function Home() {
                   )}
                 </div>
               </div>
-              
+
               <div className="chat-messages" ref={chatMessagesContainerRef}>
                 {chatMessages.map((msg, index) => {
                   if (msg.text === '__WELCOME_CARD__') {
@@ -599,7 +597,7 @@ export default function Home() {
                 )}
                 <div ref={chatMessagesEndRef} />
               </div>
-              
+
               <div className="chat-suggestions">
                 {(['About Me', 'Projects', 'Skills', 'Experience', 'Contact'] as const).map((label) => {
                   const queries: Record<string, string> = {
@@ -621,9 +619,9 @@ export default function Home() {
                   );
                 })}
               </div>
-              
-              <form 
-                className="chat-input-area" 
+
+              <form
+                className="chat-input-area"
                 onSubmit={(e) => {
                   e.preventDefault();
                   if (chatInput.trim()) {
@@ -632,13 +630,13 @@ export default function Home() {
                   }
                 }}
               >
-                <input 
-                  type="text" 
-                  placeholder="Ask me about Ashwin's skills, experience, projects..." 
+                <input
+                  type="text"
+                  placeholder="Ask me about Ashwin's skills, experience, projects..."
                   value={chatInput}
                   onChange={(e) => setChatInput(e.target.value)}
-                  autoComplete="off" 
-                  required 
+                  autoComplete="off"
+                  required
                 />
                 <button type="submit" className="chat-send-btn" aria-label="Send message">
                   <i className="fa-solid fa-paper-plane"></i>
@@ -659,27 +657,24 @@ export default function Home() {
         <div className="about-details">
           <h2>About Me</h2>
           <p>
-            I am a dedicated Data Professional and Power Platform Developer with a passion for designing scalable applications and transforming complex datasets into actionable insights. With a Master of Science in Data Analytics, I bridge the gap between technical execution and business intelligence.
-          </p>
-          <p>
-            Whether it is developing robust data applications for government projects, configuring browser automation systems, or optimizing multi-channel e-commerce search algorithms using Python, I thrive on finding clean, structured solutions to complex data problems.
+            I am an AI Engineer & Data Professional experienced in AI data analysis, data engineering, data management, and BI reporting, with a strong background in Microsoft Power BI and Power Apps. Developed multiple applications for government projects, focusing on data organization, ETL processes, automation, and visualization. Skilled in improving data processes to support informed decision-making.
           </p>
           <div className="about-stats">
             <div className="stat-card glass-panel">
+              <span className="stat-number">3+</span>
+              <span className="stat-label">Years of Experience</span>
+            </div>
+            <div className="stat-card glass-panel">
               <span className="stat-number">6+</span>
-              <span className="stat-label">Data Apps Built</span>
+              <span className="stat-label">Projects Completed</span>
             </div>
             <div className="stat-card glass-panel">
-              <span className="stat-number">70%</span>
-              <span className="stat-label">ROAS & Gain</span>
-            </div>
-            <div className="stat-card glass-panel">
-              <span className="stat-number">26k+</span>
-              <span className="stat-label">Keywords Processed</span>
+              <span className="stat-number">25+</span>
+              <span className="stat-label">Tools & Languages</span>
             </div>
             <div className="stat-card glass-panel">
               <span className="stat-number">2</span>
-              <span className="stat-label">Microsoft Certs</span>
+              <span className="stat-label">Certifications</span>
             </div>
           </div>
         </div>
@@ -689,9 +684,24 @@ export default function Home() {
       <section id="skills" className="reveal">
         <h2>Technical Skills</h2>
         <div className="skills-container">
+          {/* AI Tools */}
+          <div className="skills-category glass-panel">
+            <h3><i className="fa-solid fa-robot" style={{ color: 'var(--accent-cyan)' }}></i> AI Tools</h3>
+            <div className="skills-list">
+              <span className="skill-tag">Cursor AI</span>
+              <span className="skill-tag">Claude AI</span>
+              <span className="skill-tag">OpenAI Codex</span>
+              <span className="skill-tag">Google Antigravity</span>
+              <span className="skill-tag">Vapi AI</span>
+              <span className="skill-tag">Manus</span>
+              <span className="skill-tag">n8n</span>
+              <span className="skill-tag">Google Studio AI</span>
+            </div>
+          </div>
+
           {/* Languages */}
           <div className="skills-category glass-panel">
-            <h3><i className="fa-solid fa-code" style={{ color: 'var(--accent-cyan)' }}></i> Languages</h3>
+            <h3><i className="fa-solid fa-code" style={{ color: 'var(--accent-cyan)' }}></i> Programming Languages</h3>
             <div className="skills-list">
               <span className="skill-tag">Python</span>
               <span className="skill-tag">DAX</span>
@@ -700,7 +710,7 @@ export default function Home() {
               <span className="skill-tag">R</span>
             </div>
           </div>
-          
+
           {/* BI */}
           <div className="skills-category glass-panel">
             <h3><i className="fa-solid fa-chart-pie" style={{ color: 'var(--accent-purple)' }}></i> Business Intelligence</h3>
@@ -718,26 +728,48 @@ export default function Home() {
             <div className="skills-list">
               <span className="skill-tag">Microsoft Power Apps</span>
               <span className="skill-tag">Power Automate</span>
-              <span className="skill-tag">Microsoft Dataverse</span>
+              <span className="skill-tag">Dataverse</span>
               <span className="skill-tag">Azure DevOps</span>
               <span className="skill-tag">SharePoint</span>
-              <span className="skill-tag">Cursor AI</span>
               <span className="skill-tag">Oracle Apex</span>
               <span className="skill-tag">Google Ads</span>
               <span className="skill-tag">Meta Ads</span>
+              <span className="skill-tag">Amazon Ads</span>
             </div>
           </div>
 
           {/* Databases */}
           <div className="skills-category glass-panel">
-            <h3><i className="fa-solid fa-database" style={{ color: 'var(--accent-purple)' }}></i> Databases & Cloud</h3>
+            <h3><i className="fa-solid fa-database" style={{ color: 'var(--accent-purple)' }}></i> Databases</h3>
             <div className="skills-list">
+              <span className="skill-tag">Microsoft Dataverse</span>
               <span className="skill-tag">SQL Server</span>
               <span className="skill-tag">MySQL</span>
               <span className="skill-tag">SQLite</span>
+              <span className="skill-tag">PostgreSQL</span>
+            </div>
+          </div>
+
+          {/* Data Management */}
+          <div className="skills-category glass-panel">
+            <h3><i className="fa-solid fa-gears" style={{ color: 'var(--accent-cyan)' }}></i> Data Management</h3>
+            <div className="skills-list">
+              <span className="skill-tag">ETL Processes</span>
+              <span className="skill-tag">Data Modeling</span>
+              <span className="skill-tag">Data Migration</span>
+              <span className="skill-tag">Cleaning & Transformation</span>
+              <span className="skill-tag">Automation</span>
+            </div>
+          </div>
+
+          {/* Cloud & OS */}
+          <div className="skills-category glass-panel">
+            <h3><i className="fa-solid fa-cloud" style={{ color: 'var(--accent-purple)' }}></i> Cloud & OS</h3>
+            <div className="skills-list">
               <span className="skill-tag">AWS Console</span>
-              <span className="skill-tag">Windows & Mac</span>
+              <span className="skill-tag">Windows</span>
               <span className="skill-tag">Linux</span>
+              <span className="skill-tag">Mac</span>
             </div>
           </div>
         </div>
@@ -747,7 +779,7 @@ export default function Home() {
       <section id="experience" className="reveal">
         <h2>Professional Experience</h2>
         <div className="timeline">
-          
+
           <div className="timeline-item">
             <div className="timeline-badge"></div>
             <div className="timeline-content glass-panel">
@@ -755,10 +787,11 @@ export default function Home() {
               <h3>AI Data Analyst</h3>
               <span className="timeline-company">Dementia Aide | CA</span>
               <ul>
-                <li>Extracted and analyzed large-scale e-commerce datasets using Python to identify statistical trends, optimizing conversion and key metrics by 70%.</li>
-                <li>Built automated workflow scripts using Vibe coding and prompt engineering in Cursor AI, replacing 15+ hours of manual spreadsheet work.</li>
-                <li>Created Power BI dashboards to visualize ad performance, speeding up internal decision-making.</li>
-                <li>Conducted historical analysis on 20+ campaigns to optimize Return on Ad Spend (ROAS) to over 4.0.</li>
+                <li>Extracted and analyzed large-scale multi-year e-commerce datasets using Python to identify statistical trends in search term performance, optimizing revenue and key performance metrics by 70%.</li>
+                <li>Built automated workflow scripts using Vibe coding and prompt engineering in Cursor AI, replacing 15+ hours of manual spreadsheet categorization of raw CSV exports by processing 26,000+ negative keywords into platform-ready lists.</li>
+                <li>Created Power BI dashboards to visualize ad performance and user demographics, speeding up internal decision-making.</li>
+                <li>Conducted historical data analysis across 20+ multi-channel campaigns to formulate data-driven strategies, optimizing Return on Ad Spend (ROAS) to over 4.0 and increasing conversion rates.</li>
+                <li>Formulated data-driven campaigns and continuously monitored and adjusted cross-channel budget allocations to ensure optimal ad spend.</li>
               </ul>
             </div>
           </div>
@@ -770,10 +803,10 @@ export default function Home() {
               <h3>Data Engineer / Power Apps Developer</h3>
               <span className="timeline-company">Ark Infotech LLC | MD</span>
               <ul>
-                <li>Developed 6 data applications for NIH government projects, integrating Power Apps and Power BI.</li>
-                <li>Designed and implemented relational data models in Microsoft Dataverse, improving data integrity.</li>
-                <li>Configured Playwright automation test scripts, reducing manual testing time.</li>
-                <li>Developed Power BI dashboards, Paginated Reports, and Python-based ETL pipelines to prepare complex datasets for migration.</li>
+                <li><strong>NIH Data Applications:</strong> Developed 6 custom data applications integrating Power Apps and Power BI dashboards to enable data-driven reporting and decision-making for government stakeholders.</li>
+                <li><strong>Dataverse Modeling & Migration:</strong> Designed relational data models in Microsoft Dataverse, successfully migrating and integrating legacy datasets from SharePoint, Excel, and Access databases.</li>
+                <li><strong>Vibe Coding & Automation:</strong> Configured Playwright MCP setup and used Vibe coding to generate browser automation testing scripts, significantly reducing manual testing cycles and ensuring platform stability.</li>
+                <li><strong>Python ETL & Workflows:</strong> Built Python-based ETL pipelines and automated Power Automate workflows to clean, structure, and transition complex datasets into relational formats.</li>
               </ul>
             </div>
           </div>
@@ -784,7 +817,7 @@ export default function Home() {
       <section id="projects" className="reveal">
         <h2>Featured Projects</h2>
         <div className="projects-grid">
-          
+
           <div className="project-card glass-panel">
             <div className="project-img-wrapper">
               <img src="/assets/power-apps.jpg" alt="Intelligent Hiring Assistant" className="project-img" />
@@ -955,9 +988,13 @@ export default function Home() {
                 <i className="fa-brands fa-github"></i>
                 <span>github.com/AshwinSanthanakrishnan</span>
               </a>
+              <a href="https://linkedin.com/in/ashwin-santhanakrishanan-24abb1190" target="_blank" rel="noopener noreferrer" className="contact-method">
+                <i className="fa-brands fa-linkedin"></i>
+                <span>linkedin.com/in/ashwin-santhanakrishanan-24abb1190</span>
+              </a>
             </div>
           </div>
-          
+
           <form className="contact-form glass-panel" onSubmit={handleContactSubmit}>
             {formSubmitted ? (
               <div style={{ textAlign: 'center', padding: '3rem 1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
@@ -1005,7 +1042,7 @@ export default function Home() {
 
       {/* Floating Minimized Trigger */}
       {chatState === 'minimized' && showStickyBar && (
-        <button 
+        <button
           type="button"
           className="chatbot-minimized-trigger"
           onClick={() => setChatState('floating')}
@@ -1019,7 +1056,7 @@ export default function Home() {
       {/* Sticky Chat Typing Bar */}
       {showStickyBar && chatState !== 'floating' && (
         <div className="sticky-chat-bar-container">
-          <form 
+          <form
             className="sticky-chat-form"
             onSubmit={(e) => {
               e.preventDefault();

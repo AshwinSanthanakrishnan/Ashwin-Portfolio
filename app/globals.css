@@ -252,6 +252,10 @@ header {
   letter-spacing: -0.05em;
 }
 
+.nav-container nav {
+  margin-left: auto;
+}
+
 nav ul {
   display: flex;
   gap: 2.5rem;
