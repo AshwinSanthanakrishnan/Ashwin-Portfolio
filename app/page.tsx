@@ -160,7 +160,7 @@ export default function Home() {
     e.preventDefault();
     setFormSending(true);
 
-    const formEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/placeholder";
+    const formEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/mdarvdvy";
     
     if (formEndpoint === "https://formspree.io/f/placeholder") {
       setTimeout(() => {
