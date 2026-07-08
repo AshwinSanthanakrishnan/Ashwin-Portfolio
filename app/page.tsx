@@ -40,6 +40,7 @@ export default function Home() {
   // Typewriter Hero title state
   const [typedText, setTypedText] = useState('Data Professional');
   const roles = [
+    'AI Engineer',
     'AI Data Analyst',
     'Power Platform Developer',
     'Data Engineer',
@@ -155,13 +156,45 @@ export default function Home() {
 
 
   // Contact Form submit logic
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormSending(true);
-    setTimeout(() => {
+
+    const formEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/placeholder";
+    
+    if (formEndpoint === "https://formspree.io/f/placeholder") {
+      setTimeout(() => {
+        setFormSending(false);
+        setFormSubmitted(true);
+        console.warn("Please configure NEXT_PUBLIC_FORMSPREE_ENDPOINT in Vercel to receive real emails.");
+      }, 1500);
+      return;
+    }
+
+    try {
+      const response = await fetch(formEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formName,
+          email: formEmail,
+          subject: formSubject,
+          message: formMessage,
+        }),
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    } catch (error) {
+      alert("Oops! There was a problem submitting your form.");
+    } finally {
       setFormSending(false);
-      setFormSubmitted(true);
-    }, 1500);
+    }
   };
 
   // Chatbot response generator — grounded knowledge base

@@ -836,38 +836,33 @@ nav ul li a.active::after {
 /* Experience Section (Timeline) */
 .timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  width: 1px;
+  width: 2px;
   background: linear-gradient(180deg, var(--border-color) 0%, var(--accent-violet) 50%, var(--accent-rose) 100%);
   top: 0;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 20px;
+  transform: none;
 }
 
 .timeline-item {
   position: relative;
-  width: 50%;
-  padding: 2.2rem;
+  width: 100%;
+  padding: 1.5rem 1.5rem 1.5rem 4rem;
   box-sizing: border-box;
 }
 
-.timeline-item:nth-child(odd) {
+.timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
   left: 0;
-  text-align: right;
-  padding-right: 4.5rem;
-}
-
-.timeline-item:nth-child(even) {
-  left: 50%;
   text-align: left;
-  padding-left: 4.5rem;
+  padding-right: 0;
+  padding-left: 4rem;
 }
 
 .timeline-badge {
@@ -877,8 +872,8 @@ nav ul li a.active::after {
   background: var(--bg-primary);
   border: 2px solid var(--accent-violet);
   border-radius: 50%;
-  top: 3rem;
-  left: 50%;
+  top: 2.5rem;
+  left: 20px;
   transform: translate(-50%, -50%);
   z-index: 10;
   transition: var(--transition-smooth);
@@ -895,7 +890,7 @@ nav ul li a.active::after {
 }
 
 .timeline-content {
-  padding: 2.5rem;
+  padding: 2rem;
   text-align: left;
   border-radius: 12px;
 }
@@ -1883,6 +1878,13 @@ footer {
   }
 }
 
+/* Prevent horizontal overflow on html and body */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 /* Mobile Responsive Styling Overrides */
 @media (max-width: 768px) {
   /* Header & Navigation Mobile Menu */
@@ -1925,17 +1927,44 @@ footer {
     right: 0;
   }
 
-  /* Reduce Hero Spacing & Sizes for Mobile */
+  /* Fix Hero Overlap & Align Center on Mobile */
   #hero {
-    padding: 6rem 1rem 3rem 1rem;
+    min-height: auto;
+    height: auto;
+    padding: 9rem 1.2rem 4rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content.centered {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-subtitle {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.8rem;
+    text-align: center;
   }
 
   .hero-title {
-    font-size: 2.2rem !important;
+    font-size: 2.1rem !important;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .hero-desc {
     font-size: 0.95rem !important;
+    margin-bottom: 2.2rem;
+    text-align: center;
   }
 
   /* About responsive spacing */
