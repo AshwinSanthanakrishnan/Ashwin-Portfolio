@@ -156,45 +156,23 @@ export default function Home() {
 
 
   // Contact Form submit logic
-  const handleContactSubmit = async (e: React.FormEvent) => {
+  const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormSending(true);
 
-    const formEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/placeholder";
-    
-    if (formEndpoint === "https://formspree.io/f/placeholder") {
-      setTimeout(() => {
-        setFormSending(false);
-        setFormSubmitted(true);
-        console.warn("Please configure NEXT_PUBLIC_FORMSPREE_ENDPOINT in Vercel to receive real emails.");
-      }, 1500);
-      return;
-    }
+    const emailTo = "ashwin638525@gmail.com";
+    const subject = encodeURIComponent(formSubject || "Contact from Portfolio");
+    const body = encodeURIComponent(
+      `Name: ${formName}\nEmail: ${formEmail}\n\nMessage:\n${formMessage}`
+    );
 
-    try {
-      const response = await fetch(formEndpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formName,
-          email: formEmail,
-          subject: formSubject,
-          message: formMessage,
-        }),
-      });
+    // Open user's local mail app with details pre-filled
+    window.location.href = `mailto:${emailTo}?subject=${subject}&body=${body}`;
 
-      if (response.ok) {
-        setFormSubmitted(true);
-      } else {
-        alert("Oops! There was a problem submitting your form.");
-      }
-    } catch (error) {
-      alert("Oops! There was a problem submitting your form.");
-    } finally {
+    setTimeout(() => {
       setFormSending(false);
-    }
+      setFormSubmitted(true);
+    }, 1000);
   };
 
   // Chatbot response generator — grounded knowledge base
