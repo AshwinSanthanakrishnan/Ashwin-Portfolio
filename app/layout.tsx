@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "Portfolio of Ashwin Santhanakrishnan, a Data Professional specializing in AI data analysis, data engineering, Power BI dashboards, Power Apps, and automated ETL pipelines.",
   keywords: ["Ashwin Santhanakrishnan", "Data Analyst", "Power Apps Developer", "Power BI", "Data Engineer", "ETL", "Python", "SQL", "Microsoft Power Platform"],
   authors: [{ name: "Ashwin Santhanakrishnan" }],
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
