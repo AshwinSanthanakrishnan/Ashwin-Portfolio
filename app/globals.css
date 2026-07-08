@@ -2023,3 +2023,18 @@ html, body {
     padding: 4rem 1.5rem !important;
   }
 }
+
+/* Contact Card Options Grid in Chat */
+.contact-options-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .contact-options-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
