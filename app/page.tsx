@@ -361,34 +361,19 @@ export default function Home() {
                       <i className="fa-solid fa-minus"></i>
                     </button>
                   ) : (
-                    <>
-                      <button
-                        type="button"
-                        className="window-control-btn"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          setChatState(chatState === 'maximized' ? 'normal' : 'maximized');
-                        }}
-                        title={chatState === 'maximized' ? "Restore window size" : "Maximize window size"}
-                        aria-label="Toggle size"
-                      >
-                        <i className={`fa-solid ${chatState === 'maximized' ? 'fa-compress' : 'fa-expand'}`}></i>
-                      </button>
-                      <button
-                        type="button"
-                        className="window-control-btn"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          setChatState('minimized');
-                        }}
-                        title="Minimize to floating widget"
-                        aria-label="Minimize"
-                      >
-                        <i className="fa-solid fa-minus"></i>
-                      </button>
-                    </>
+                    <button
+                      type="button"
+                      className="window-control-btn"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setChatState(chatState === 'maximized' ? 'normal' : 'maximized');
+                      }}
+                      title={chatState === 'maximized' ? "Restore window size" : "Maximize window size"}
+                      aria-label="Toggle size"
+                    >
+                      <i className={`fa-solid ${chatState === 'maximized' ? 'fa-compress' : 'fa-expand'}`}></i>
+                    </button>
                   )}
                 </div>
               </div>
