@@ -197,144 +197,7 @@ export default function Home() {
     }
   };
 
-  // Chatbot response generator — grounded knowledge base
-  const getBotResponse = (input: string): string => {
-    const raw = input.toLowerCase();
-    const text = raw.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g, "");
-
-    // Smart match: short words use word-boundary (\b) to avoid 'yo' matching 'you',
-    // 'hi' matching 'ashwin', etc. Phrases and longer words use substring.
-    const has = (word: string): boolean => {
-      const trimmed = word.trim();
-      if (trimmed.includes(' ')) return text.includes(trimmed);        // multi-word phrase
-      if (trimmed.length <= 4) return new RegExp(`\\b${trimmed}\\b`).test(text); // short word: whole-word only
-      return text.includes(trimmed);                                    // longer word: substring ok
-    };
-    const hasAny = (arr: string[]) => arr.some(w => has(w));
-
-    // === OFF-TOPIC GUARD ===
-    // Detect when user is asking about completely unrelated topics
-    const offTopicKeywords = [
-      'weather', 'news', 'sports', 'recipe', 'cook', 'movie', 'film',
-      'celebrity', 'politics', 'president', 'game', 'gaming', 'stock', 'crypto',
-      'bitcoin', 'finance', 'travel', 'hotel', 'flight', 'math problem', 'calculate',
-      'write me', 'write a poem', 'joke', 'story', 'translate', 'what is the capital',
-      'who invented', 'explain quantum', 'define', 'wikipedia', 'search',
-      'chatgpt', 'openai', 'ai help', 'homework', 'essay',
-    ];
-    if (hasAny(offTopicKeywords)) {
-      const offTopicReplies = [
-        "I am Ashwin's dedicated AI assistant and can only share information about Ashwin. Try asking me about his projects, skills, or experience!",
-        "That is outside my knowledge base. I am only trained on Ashwin's professional profile. Ask me about his skills, background, or how to contact him.",
-        "I appreciate the curiosity, but I can only tell you about Ashwin Santhanakrishnan. Try asking: 'What projects has he built?' or 'What are his skills?'",
-      ];
-      return offTopicReplies[Math.floor(Math.random() * offTopicReplies.length)];
-    }
-
-    // === GREETINGS ===
-    if (hasAny(['hi', 'hello', 'hey', 'greetings', 'welcome', 'yo', 'sup', 'good morning', 'good afternoon', 'howdy'])) {
-      return "Hello! I am Ashwin's AI Assistant, trained on his professional profile. I can tell you about his projects, skills, work experience, education, and more. What would you like to know?";
-    }
-
-    // === WHO IS ASHWIN / ABOUT / GENERAL ===
-    if (hasAny(['who is ashwin', 'tell me about ashwin', 'about ashwin', 'introduce', 'who are you', 'what do you do', 'summary', 'background', 'overview'])) {
-      return "Ashwin Santhanakrishnan is an AI Engineer & Data Professional based in the Washington D.C. area. He holds an MS in Data Analytics from Catholic University of America and a BS in Computer Engineering from SUNY. He specializes in AI engineering, data analysis, Power BI dashboards, Power Apps development, Python ETL pipelines, and machine learning. He has worked on government data applications at NIH and e-commerce analytics roles. He is also an active user of AI tools like Cursor AI, Claude AI, and n8n.";
-    }
-
-    // === PROJECTS ===
-    if (hasAny(['project', 'projects', 'built', 'what have you built', 'portfolio', 'work', 'github', 'repo', 'code'])) {
-      if (hasAny(['house price', 'house prediction', 'real estate', 'property'])) {
-        return "House Price Prediction Model\n\nBuilt with Python and Jupyter Notebooks, this ML project focuses on real estate market analysis. It cleans raw datasets, performs feature engineering, and trains regression models (Linear Regression, Random Forest) to accurately predict property prices.\n\nTech Used: Python, Pandas, Scikit-Learn, Jupyter, Matplotlib\n\n[View Repo →](https://github.com/AshwinSanthanakrishnan/House-Price-Prediction)";
-      }
-      if (hasAny(['hiring', 'assistant', 'recruit', 'resume', 'candidate'])) {
-        return "Intelligent Hiring Assistant\n\nA TypeScript-based application that automates the resume screening process using NLP. It parses candidate resumes, extracts key technical skills and experience tags, scores candidates against job descriptions, and surfaces the best-fit profiles.\n\nTech Used: TypeScript, Node.js, NLP libraries, Applied ML\n\n[View Repo →](https://github.com/AshwinSanthanakrishnan/intelligent-hiring-assistant)";
-      }
-      if (hasAny(['nlp', 'natural language', 'text', 'classification', 'sentiment'])) {
-        return "Mini-Project NLP Systems\n\nA suite of NLP mini-projects built in TypeScript. Includes text classification pipelines, sentiment analysis models, and sentence tokenization experiments using pre-trained language models deployed in Node environments.\n\nTech Used: TypeScript, NLP Models, Machine Learning, Model Deployment\n\n[View Repo →](https://github.com/AshwinSanthanakrishnan/Mini-Project-NLP)";
-      }
-      if (hasAny(['report', 'bi', 'dashboard', 'power bi', 'tableau', 'visualization'])) {
-        return "Reports & BI Dashboards\n\nA curated collection of business intelligence reports and interactive Power BI dashboards built for real client and government scenarios. Includes paginated reports, KPI tracking dashboards, and SQL-backed data models.\n\nTech Used: Power BI, DAX, SQL Server, Paginated Report Builder\n\n[View Repo →](https://github.com/AshwinSanthanakrishnan/Reports)";
-      }
-      return "Ashwin's featured projects include:<br><ul><li>House Price Prediction — Python ML regression model for property pricing. <a href='https://github.com/AshwinSanthanakrishnan/House-Price-Prediction' target='_blank'>View →</a></li><li>Intelligent Hiring Assistant — TypeScript NLP resume screening system. <a href='https://github.com/AshwinSanthanakrishnan/intelligent-hiring-assistant' target='_blank'>View →</a></li><li>Mini-Project NLP Systems — Text classification & sentiment analysis. <a href='https://github.com/AshwinSanthanakrishnan/Mini-Project-NLP' target='_blank'>View →</a></li><li>Reports & BI Dashboards — Power BI dashboards for government & enterprise. <a href='https://github.com/AshwinSanthanakrishnan/Reports' target='_blank'>View →</a></li></ul>Ask me about any specific project for more details!";
-    }
-
-    // === SKILLS ===
-    if (hasAny(['skill', 'skills', 'know', 'technologies', 'tech stack', 'programming', 'languages', 'tools', 'expertise'])) {
-      if (hasAny(['python', 'pandas', 'scikit', 'numpy'])) {
-        return "Ashwin is highly proficient in Python for data analysis, machine learning, and automation. He uses libraries like Pandas, NumPy, Scikit-Learn, and Matplotlib regularly in his projects and professional work.";
-      }
-      if (hasAny(['sql', 'database', 'dataverse', 'sql server', 'mysql', 'postgresql', 'postgres'])) {
-        return "Ashwin has strong SQL skills across SQL Server, MySQL, SQLite, and PostgreSQL. He designs relational data models, writes complex joins and aggregations in DAX, and manages Microsoft Dataverse databases for Power Platform applications.";
-      }
-      if (hasAny(['power bi', 'power apps', 'power automate', 'power platform', 'microsoft'])) {
-        return "Ashwin is a Microsoft Power Platform specialist. He builds canvas and model-driven Power Apps, designs automated workflows with Power Automate, creates interactive Power BI dashboards, and manages Dataverse data architecture. He holds both Power Platform certifications.";
-      }
-      if (hasAny(['ai tool', 'cursor', 'claude', 'n8n', 'vapi', 'manus', 'antigravity', 'codex', 'studio ai'])) {
-        return "Ashwin actively uses cutting-edge AI tools in his workflow:<br><ul><li>Cursor AI — Vibe coding & prompt engineering</li><li>Claude AI — Complex reasoning and writing</li><li>OpenAI Codex — Code generation</li><li>Google Antigravity — Agentic coding</li><li>Vapi AI — Voice AI applications</li><li>n8n — Workflow automation</li><li>Manus — Autonomous AI agents</li><li>Google Studio AI — Gemini experiments</li></ul>";
-      }
-      if (hasAny(['tableau', 'looker', 'google looker', 'visualization'])) {
-        return "Ashwin is skilled in data visualization tools including Microsoft Power BI, Tableau, and Google Looker Studio. He designs executive dashboards that combine clean layouts with actionable KPI tracking.";
-      }
-      if (hasAny(['r language', 'rstudio', 'ggplot'])) {
-        return "Ashwin is proficient in R for statistical computing and data analysis, often using it for exploratory data analysis (EDA), visualization with ggplot2, and academic research projects.";
-      }
-      return "Ashwin's full technical skill set:<br><ul><li>AI Tools: Cursor AI, Claude AI, OpenAI Codex, Google Antigravity, Vapi AI, Manus, n8n, Google Studio AI</li><li>Programming Languages: Python, DAX, SQL, JavaScript, R</li><li>Business Intelligence: Microsoft Power BI, Tableau, Google Looker Studio, Paginated Report Builder</li><li>Platforms & Tools: Microsoft Power Apps, Power Automate, Dataverse, Azure DevOps, SharePoint, Oracle Apex, Google Ads, Meta Ads, Amazon Ads</li><li>Databases: Microsoft Dataverse, SQL Server, MySQL, SQLite, PostgreSQL</li><li>Data Management: ETL Processes, Data Modeling, Data Migration, Cleaning & Transformation, Automation</li><li>Cloud & OS: AWS Console, Windows, Linux, Mac</li></ul>Ask me about any specific tool or technology!";
-    }
-
-    // === EXPERIENCE / WORK ===
-    if (hasAny(['experience', 'work history', 'where have you worked', 'job', 'company', 'employer', 'career', 'dementia', 'ark', 'nih', 'government', 'role'])) {
-      if (hasAny(['dementia', 'ecommerce', 'e-commerce', 'ads', 'roas', 'conversion'])) {
-        return "AI Data Analyst @ Dementia Aide (Oct 2025 – May 2026)\n\n• Extracted and analyzed large-scale multi-year e-commerce datasets using Python to identify statistical trends in search term performance, optimizing revenue and key performance metrics by 70%.\n• Built automated workflow scripts using Vibe coding and prompt engineering in Cursor AI, replacing 15+ hours of manual spreadsheet categorization of raw CSV exports by processing 26,000+ negative keywords into platform-ready lists.\n• Created Power BI dashboards to visualize ad performance and user demographics, speeding up internal decision-making.\n• Conducted historical data analysis across 20+ multi-channel campaigns to formulate data-driven strategies, optimizing Return on Ad Spend (ROAS) to over 4.0 and increasing conversion rates.\n• Formulated data-driven campaigns and continuously monitored and adjusted cross-channel budget allocations to ensure optimal ad spend.";
-      }
-      if (hasAny(['ark', 'infotech', 'nih', 'power apps', 'government', 'etl', 'playwright'])) {
-        return "Data Engineer / Power Apps Developer @ Ark Infotech LLC (May 2023 – Aug 2024)\n\n• NIH Data Applications: Developed 6 custom data applications integrating Power Apps and Power BI dashboards to enable data-driven reporting and decision-making for government stakeholders.\n• Dataverse Modeling & Migration: Designed relational data models in Microsoft Dataverse, successfully migrating and integrating legacy datasets from SharePoint, Excel, and Access databases.\n• Vibe Coding & Automation: Configured Playwright MCP setup and used Vibe coding to generate browser automation testing scripts, significantly reducing manual testing cycles and ensuring platform stability.\n• Python ETL & Workflows: Built Python-based ETL pipelines and automated Power Automate workflows to clean, structure, and transition complex datasets into relational formats.";
-      }
-      return "Ashwin has 2 years of professional experience across AI engineering, data engineering, and analytics roles:<br><br>Data Analyst @ Dementia Aide (Oct 2025 – May 2026)<br>→ Large-scale e-commerce datasets, Vibe coding workflow automation, ROAS & conversion optimization<br><br>Data Engineer / Power Apps Developer @ Ark Infotech LLC (May 2023 – Aug 2024)<br>→ NIH Data Apps, Dataverse modeling, Python ETL, Playwright automation<br><br>Ask me about either role for more details!";
-    }
-
-    // === EDUCATION ===
-    if (hasAny(['education', 'degree', 'university', 'college', 'school', 'study', 'studied', 'graduate', 'ms ', 'masters', 'bachelor', 'bs ', 'catholic', 'suny', 'gpa', 'major'])) {
-      return "Ashwin's academic background:<br><br><strong>Master of Science in Data Analytics</strong><br>Catholic University of America, Washington D.C. | May 2026<br>Focused on machine learning, statistical modeling, data visualization, and big data systems.<br><br><strong>Bachelor of Science in Computer Engineering</strong><br>State University of New York (SUNY) | May 2023<br>Foundation in algorithms, data structures, systems programming, and software engineering.";
-    }
-
-    // === CERTIFICATIONS ===
-    if (hasAny(['certification', 'certifications', 'cert', 'certified', 'microsoft cert', 'pl-100', 'pl-400', 'badge'])) {
-      return "Ashwin holds 2 Microsoft Power Platform certifications:<br><br><strong>Microsoft Certified: Power Platform Developer Associate (PL-400)</strong><br>Validates skills in building Power Apps, Power Automate flows, securing Dataverse solutions, and creating embedded Power BI components.<br><br><strong>Microsoft Certified: Power Platform Fundamentals (PL-100)</strong><br>Core knowledge of Power Platform capabilities, connector ecosystem, security model, and business value integration.";
-    }
-
-    // === CONTACT ===
-    if (hasAny(['contact', 'email', 'phone', 'hire', 'reach', 'get in touch', 'connect', 'available', 'work together', 'collaborate'])) {
-      return "__CONTACT_CARD__";
-    }
-
-    // === PERSONALITY / FUN ===
-    if (hasAny(['hobby', 'hobbies', 'fun', 'interest', 'outside work', 'free time', 'personality', 'what do you like'])) {
-      return "Beyond data and code, Ashwin is passionate about exploring cutting-edge AI tools and building automated workflows. He enjoys staying up to date with the latest developments in the AI/ML space, experimenting with agent-based tools like n8n and Vapi AI, and applying technology creatively to solve real-world problems!";
-    }
-
-    // === ASPIRATIONS / GOALS ===
-    if (hasAny(['goal', 'aspiration', 'looking for', 'open to', 'available', 'opportunities', 'future', 'next role'])) {
-      return "Ashwin is actively seeking roles in data analytics, AI engineering, or Power Platform development. He is especially interested in positions where he can combine his Power BI/Power Apps expertise with modern AI tools like LLM automation and agent workflows. Feel free to reach out at ashwin638525@gmail.com!";
-    }
-
-    // === LOCATION ===
-    if (hasAny(['location', 'where', 'based', 'city', 'state', 'country', 'remote', 'relocation'])) {
-      return "Ashwin is currently based in the Washington D.C. metropolitan area. He is open to both remote and hybrid opportunities across the United States.";
-    }
-
-    // === CATCH-ALL OFF-TOPIC FALLBACK ===
-    // If the message doesn't match any known Ashwin topic, politely redirect
-    const ashwinKeywords = ['ashwin', 'project', 'skill', 'experience', 'education', 'contact', 'cert', 'work', 'power', 'data', 'python', 'sql', 'hire', 'about'];
-    const looksAboutAshwin = ashwinKeywords.some(k => has(k));
-
-    if (!looksAboutAshwin) {
-      return "I am specifically trained to answer questions about Ashwin Santhanakrishnan only. I cannot help with other topics, but I would love to tell you about his skills, projects, experience, or how to contact him! Try one of the quick suggestions below.";
-    }
-
-    return "Here is what I can help you with:<br><ul><li>Projects — House Price Prediction, NLP Hiring Assistant, BI Reports</li><li>Skills — Python, Power BI, Power Apps, AI Tools, SQL</li><li>Experience — Dementia Aide, Ark Infotech / NIH</li><li>Education — MS Data Analytics, BS Computer Engineering</li><li>Certifications — Microsoft Power Platform</li><li>Contact — Email, LinkedIn, GitHub, Phone</li></ul>";
-  };
-
-  const handleChatSubmit = (queryText: string) => {
+  const handleChatSubmit = async (queryText: string) => {
     if (!queryText.trim()) return;
 
     // Append user query
@@ -342,11 +205,26 @@ export default function Home() {
     setChatInput('');
     setIsTyping(true);
 
-    setTimeout(() => {
-      const response = getBotResponse(queryText);
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: queryText })
+      });
+      const data = await res.json();
+      
       setIsTyping(false);
-      setChatMessages(prev => [...prev, { text: response, sender: 'bot' }]);
-    }, 1000);
+      
+      // Smart check for contact card token anywhere in the response
+      const replyText = data.reply || "I'm sorry, I encountered an error connecting to my database.";
+      const finalReply = replyText.includes('__CONTACT_CARD__') ? '__CONTACT_CARD__' : replyText;
+
+      setChatMessages(prev => [...prev, { text: finalReply, sender: 'bot' }]);
+    } catch (error) {
+      console.error(error);
+      setIsTyping(false);
+      setChatMessages(prev => [...prev, { text: "Network error occurred.", sender: 'bot' }]);
+    }
   };
 
   // Utility to parse markdown links in bot messages
