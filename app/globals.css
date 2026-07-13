@@ -1883,7 +1883,9 @@ footer {
 @media (max-width: 600px) {
   .hero-chat-centered-container.floating-overlay {
     bottom: 1rem !important;
+    left: 1rem !important;
     right: 1rem !important;
+    width: calc(100vw - 2rem) !important;
     max-width: calc(100vw - 2rem) !important;
   }
 }
@@ -2042,7 +2044,8 @@ html, body {
 /* Fix iOS Safari auto-zoom on inputs by forcing 16px font size on mobile */
 @media (max-width: 768px) {
   .chatbot-panel-inline .chat-input-area input,
-  .chat-input-area input {
+  .chat-input-area input,
+  .sticky-chat-form input {
     font-size: 16px !important;
   }
 }
