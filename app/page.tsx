@@ -260,11 +260,13 @@ export default function Home() {
       {/* Screen Loader Splash */}
       <div className={`screen-loader ${!showLoader ? 'fade-out' : ''}`}>
         <div className="loader-content">
-          <div className="loader-logo">AS.</div>
+          <div className="loader-logo">
+            <i className="fa-solid fa-layer-group"></i>
+          </div>
           <div className="loader-bar-container">
             <div className="loader-bar"></div>
           </div>
-          <div className="loader-text">Initializing Ashwin's AI Twin...</div>
+          <div className="loader-text">Loading Ashwin's Portfolio...</div>
         </div>
       </div>
 
