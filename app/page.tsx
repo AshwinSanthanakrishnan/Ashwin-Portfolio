@@ -305,7 +305,6 @@ export default function Home() {
       {/* Hero Section */}
       <section id="hero">
         <div className="hero-content centered">
-          <span className="hero-subtitle">Welcome to my space</span>
           <h1 className="hero-title">
             Hi, I'm <span className="gradient-text">Ashwin Santhanakrishnan</span>
             <span className="typewriter">{typedText}</span>

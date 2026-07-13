@@ -223,46 +223,39 @@ section {
 /* Header & Nav */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 90vw;
   z-index: 100;
-  background: rgba(4, 1, 10, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-color);
+  background: rgba(14, 8, 24, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.3rem 2rem;
-}
-
-.logo {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--text-main);
-  background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -0.05em;
+  padding: 0.8rem 2rem;
 }
 
 .nav-container nav {
-  margin-left: auto;
+  margin: 0;
 }
 
 nav ul {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
@@ -1905,6 +1898,14 @@ html, body {
 /* Mobile Responsive Styling Overrides */
 @media (max-width: 768px) {
   /* Header & Navigation Mobile Menu */
+  header {
+    top: 1rem;
+  }
+
+  .nav-container {
+    padding: 0.8rem 1.2rem;
+  }
+
   .menu-btn {
     display: block;
     z-index: 101;
