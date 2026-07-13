@@ -1,70 +1,75 @@
-/* Ashwin Santhanakrishnan — Porsche Inspired Edition */
+/* Ashwin Santhanakrishnan — Premium Inspired Edition */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
   /* Core */
-  --accent:         #D5001C;  /* Porsche red */
-  --accent-dim:     rgba(213, 0, 28, 0.12);
-  --accent-hover:   #b8001a;
+  --accent: #D5001C;
+  /* Premium red */
+  --accent-dim: rgba(213, 0, 28, 0.12);
+  --accent-hover: #b8001a;
 
   /* Hero (dark) */
-  --hero-bg:        #0c0c0c;
-  --hero-text:      #ffffff;
+  --hero-bg: #0c0c0c;
+  --hero-text: #ffffff;
 
-  /* Sections (light — like Porsche.com) */
-  --section-bg:     #ffffff;
+  /* Sections (light — like Premium.com) */
+  --section-bg: #ffffff;
   --section-bg-alt: #f4f4f4;
-  --section-text:   #1a1a1a;
-  --section-muted:  #6b6b6b;
+  --section-text: #1a1a1a;
+  --section-muted: #6b6b6b;
   --section-border: rgba(0, 0, 0, 0.1);
 
   /* Nav */
-  --nav-bg:         rgba(12, 12, 12, 0.96);
-  --nav-text:       #d0d0d0;
+  --nav-bg: rgba(12, 12, 12, 0.96);
+  --nav-text: #d0d0d0;
 
   /* Legacy aliases */
-  --bg-primary:     #0c0c0c;
-  --bg-secondary:   #141414;
-  --bg-tertiary:    #1c1c1c;
-  --bg-card:        #ffffff;
-  --text-primary:   #1a1a1a;
+  --bg-primary: #0c0c0c;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1c1c1c;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
   --text-secondary: #6b6b6b;
-  --text-tertiary:  #999999;
-  --text-main:      #1a1a1a;
-  --text-muted:     #6b6b6b;
-  --text-dark:      #999999;
-  --border:         rgba(0, 0, 0, 0.1);
-  --border-light:   rgba(0, 0, 0, 0.2);
-  --border-color:   rgba(0, 0, 0, 0.1);
-  --border-hover:   rgba(213, 0, 28, 0.5);
-  --accent-violet:  #D5001C;
-  --accent-rose:    #D5001C;
-  --accent-cyan:    #D5001C;
-  --glow-violet:    rgba(213, 0, 28, 0.15);
-  --glow-rose:      rgba(213, 0, 28, 0.15);
+  --text-tertiary: #999999;
+  --text-main: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --text-dark: #999999;
+  --border: rgba(0, 0, 0, 0.1);
+  --border-light: rgba(0, 0, 0, 0.2);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(213, 0, 28, 0.5);
+  --accent-violet: #D5001C;
+  --accent-rose: #D5001C;
+  --accent-cyan: #D5001C;
+  --glow-violet: rgba(213, 0, 28, 0.15);
+  --glow-rose: rgba(213, 0, 28, 0.15);
 
   /* Typography */
-  --font-display:   'Barlow Condensed', sans-serif;
-  --font-heading:   'Barlow Condensed', sans-serif;
-  --font-body:      'Barlow', sans-serif;
-  --font-sub:       'Inter', sans-serif;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-heading: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-sub: 'Inter', sans-serif;
 
   /* Layout */
-  --max-width:      1280px;
-  --section-pad:    7rem 2rem;
-  --transition:     all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --max-width: 1280px;
+  --section-pad: 7rem 2rem;
+  --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   --transition-smooth: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-  --border-radius:  4px;
+  --border-radius: 4px;
 }
 
 /* Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: var(--section-bg);
@@ -78,19 +83,44 @@ body {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #f0f0f0; }
-::-webkit-scrollbar-thumb { background: #cccccc; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
 
 
-/* No ambient glows - Porsche is clean */
-.ambient-glows { display: none; }
-.glow-blob { display: none; }
-@keyframes float { from {} to {} }
+/* No ambient glows - Premium is clean */
+.ambient-glows {
+  display: none;
+}
+
+.glow-blob {
+  display: none;
+}
+
+@keyframes float {
+  from {}
+
+  to {}
+}
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -140,7 +170,7 @@ section {
   transform: translateY(0);
 }
 
-/* Glass panel - Porsche card style */
+/* Glass panel - Premium card style */
 .glass-panel {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -151,10 +181,10 @@ section {
 .glass-panel:hover {
   border-color: var(--border-light);
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Buttons - Porsche style */
+/* Buttons - Premium style */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -206,7 +236,7 @@ section {
 }
 
 /* =========================================
-   HEADER — Porsche flat bar style
+   HEADER — Premium flat bar style
    Logo LEFT  |  nav links RIGHT
    ========================================= */
 header {
@@ -224,7 +254,7 @@ header {
 
 header.scroll-nav {
   background: rgba(12, 12, 12, 0.98);
-  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -320,7 +350,7 @@ nav ul li a.active::after {
 }
 
 /* =========================================
-   HERO — Porsche cinematic full-viewport
+   HERO — Premium cinematic full-viewport
    ========================================= */
 #hero {
   min-height: 100vh;
@@ -343,7 +373,8 @@ nav ul li a.active::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 68px; /* header height */
+  padding-top: 68px;
+  /* header height */
 }
 
 
@@ -417,8 +448,15 @@ nav ul li a.active::after {
 }
 
 @keyframes avatarRipple {
-  0% { transform: scale(0.85); opacity: 0.6; }
-  100% { transform: scale(1.5); opacity: 0; }
+  0% {
+    transform: scale(0.85);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }
 
 /* Subtle pulse on the avatar icon when thinking */
@@ -427,8 +465,13 @@ nav ul li a.active::after {
 }
 
 @keyframes avatarPulse {
-  from { box-shadow: 0 0 0 0 rgba(255, 0, 122, 0.4); }
-  to   { box-shadow: 0 0 0 8px rgba(255, 0, 122, 0); }
+  from {
+    box-shadow: 0 0 0 0 rgba(255, 0, 122, 0.4);
+  }
+
+  to {
+    box-shadow: 0 0 0 8px rgba(255, 0, 122, 0);
+  }
 }
 
 .chatbot-panel-inline .chat-title-info h4 {
@@ -469,8 +512,13 @@ nav ul li a.active::after {
 }
 
 @keyframes statusPulse {
-  from { opacity: 1; }
-  to   { opacity: 0.3; }
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.3;
+  }
 }
 
 /* Thinking bubble — the "AI is thinking" message */
@@ -505,18 +553,38 @@ nav ul li a.active::after {
   display: inline-block;
 }
 
-.chat-thinking-bubble .think-dot:nth-child(1) { animation-delay: 0s; }
-.chat-thinking-bubble .think-dot:nth-child(2) { animation-delay: 0.15s; }
-.chat-thinking-bubble .think-dot:nth-child(3) { animation-delay: 0.3s; }
+.chat-thinking-bubble .think-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.chat-thinking-bubble .think-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.chat-thinking-bubble .think-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
 
 @keyframes thinkBounce {
-  0%, 80%, 100% { transform: translateY(0) scale(0.8); opacity: 0.5; }
-  40% { transform: translateY(-6px) scale(1); opacity: 1; }
+
+  0%,
+  80%,
+  100% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0.5;
+  }
+
+  40% {
+    transform: translateY(-6px) scale(1);
+    opacity: 1;
+  }
 }
 
 .chatbot-panel-inline .chat-messages {
-  flex: 1 1 0;       /* grow to fill, shrink to fit — critical for internal scroll */
-  min-height: 0;     /* without this, flex items don't shrink below content size */
+  flex: 1 1 0;
+  /* grow to fill, shrink to fit — critical for internal scroll */
+  min-height: 0;
+  /* without this, flex items don't shrink below content size */
   padding: 1.2rem;
   overflow-y: auto;
   overflow-x: hidden;
@@ -538,8 +606,15 @@ nav ul li a.active::after {
 }
 
 @keyframes popBubbleInline {
-  from { transform: translateY(10px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .chatbot-panel-inline .chat-msg-bot {
@@ -577,7 +652,8 @@ nav ul li a.active::after {
   scrollbar-width: none;
   border-top: 1px solid var(--border);
   background: transparent;
-  flex-shrink: 0;    /* never collapse — always visible above input */
+  flex-shrink: 0;
+  /* never collapse — always visible above input */
 }
 
 .chatbot-panel-inline .chat-suggestions::-webkit-scrollbar {
@@ -613,7 +689,8 @@ nav ul li a.active::after {
   background: #f9f9f9;
   display: flex;
   gap: 0.75rem;
-  flex-shrink: 0;    /* always visible at the bottom */
+  flex-shrink: 0;
+  /* always visible at the bottom */
 }
 
 .chatbot-panel-inline .chat-input-area input {
@@ -699,7 +776,9 @@ nav ul li a.active::after {
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-desc {
@@ -719,7 +798,7 @@ nav ul li a.active::after {
   flex-wrap: wrap;
 }
 
-/* About Section — Porsche two-column */
+/* About Section — Premium two-column */
 #about {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -764,7 +843,7 @@ nav ul li a.active::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, transparent 60%, rgba(12,12,12,0.6) 100%);
+  background: linear-gradient(180deg, transparent 60%, rgba(12, 12, 12, 0.6) 100%);
   pointer-events: none;
 }
 
@@ -787,7 +866,7 @@ nav ul li a.active::after {
   line-height: 1.8;
 }
 
-/* Stats — Porsche spec sheet style */
+/* Stats — Premium spec sheet style */
 .about-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -831,7 +910,7 @@ nav ul li a.active::after {
   letter-spacing: 0.1em;
 }
 
-/* Skills — Porsche spec grid */
+/* Skills — Premium spec grid */
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -892,7 +971,7 @@ nav ul li a.active::after {
   background: rgba(213, 0, 28, 0.05);
 }
 
-/* Timeline — Porsche editorial clean */
+/* Timeline — Premium editorial clean */
 .timeline {
   position: relative;
   max-width: 800px;
@@ -916,7 +995,8 @@ nav ul li a.active::after {
   box-sizing: border-box;
 }
 
-.timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+.timeline-item:nth-child(odd),
+.timeline-item:nth-child(even) {
   left: 0;
   text-align: left;
   padding-right: 0;
@@ -1034,13 +1114,13 @@ nav ul li a.active::after {
   border: 1px solid var(--border);
   background: var(--section-bg-alt);
   transition: var(--transition-smooth);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .project-card:hover {
   background: var(--section-bg);
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .project-img-wrapper {
@@ -1281,7 +1361,7 @@ nav ul li a.active::after {
   box-shadow: none;
 }
 
-/* Footer — Porsche clean structured */
+/* Footer — Premium clean structured */
 footer {
   border-top: 1px solid var(--border);
   padding: 3rem 2rem;
@@ -1307,7 +1387,9 @@ footer {
   color: #ffffff;
 }
 
-.footer-brand span { color: var(--accent); }
+.footer-brand span {
+  color: var(--accent);
+}
 
 .footer-copy {
   font-size: 0.78rem;
@@ -1315,7 +1397,7 @@ footer {
   letter-spacing: 0.05em;
 }
 
-/* Chatbot floating trigger — Porsche red */
+/* Chatbot floating trigger —  red */
 .chatbot-trigger {
   position: fixed;
   bottom: 2rem;
@@ -1351,7 +1433,7 @@ footer {
   max-width: calc(100vw - 4rem);
   max-height: calc(100vh - 10rem);
   background: #141414;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
   display: flex;
@@ -1419,7 +1501,8 @@ footer {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #00e676; /* Live green dot */
+  background: #00e676;
+  /* Live green dot */
 }
 
 .chat-close-btn {
@@ -1456,8 +1539,15 @@ footer {
 }
 
 @keyframes popBubble {
-  from { transform: translateY(10px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .chat-msg-bot {
@@ -1493,13 +1583,15 @@ footer {
   gap: 1rem;
   padding: 0.5rem 1.2rem;
   overflow-x: auto;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
+  /* Firefox */
   border-top: 1px solid rgba(255, 255, 255, 0.03);
   background: transparent;
 }
 
 .chat-suggestions::-webkit-scrollbar {
-  display: none; /* Safari/Chrome */
+  display: none;
+  /* Safari/Chrome */
 }
 
 .suggestion-pill {
@@ -1576,12 +1668,20 @@ footer {
 }
 
 @keyframes dot-bounce {
-  0%, 80%, 100% { transform: scale(0); }
-  40% { transform: scale(1.0); }
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1.0);
+  }
 }
 
 /* ==========================================================================
-   PRASSHANNA-STYLE INTERACTIVE ADDITIONS: SPLASH LOADER & MULTI-STATE WIDGET
+   unique-STYLE INTERACTIVE ADDITIONS: SPLASH LOADER & MULTI-STATE WIDGET
    ========================================================================== */
 
 /* ── 1. Fullscreen Splash Loader ── */
@@ -1625,8 +1725,15 @@ footer {
 }
 
 @keyframes logoGlowPulse {
-  0% { transform: scale(0.95); filter: drop-shadow(0 0 10px rgba(255, 0, 122, 0.2)); }
-  100% { transform: scale(1.05); filter: drop-shadow(0 0 30px rgba(138, 43, 226, 0.6)); }
+  0% {
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 10px rgba(255, 0, 122, 0.2));
+  }
+
+  100% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 30px rgba(138, 43, 226, 0.6));
+  }
 }
 
 .loader-bar-container {
@@ -1648,8 +1755,13 @@ footer {
 }
 
 @keyframes loaderSlide {
-  0% { left: -60px; }
-  100% { left: 180px; }
+  0% {
+    left: -60px;
+  }
+
+  100% {
+    left: 180px;
+  }
 }
 
 .loader-text {
@@ -1663,8 +1775,13 @@ footer {
 }
 
 @keyframes pulseOpacity {
-  0% { opacity: 0.4; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* ── 2. Multi-state Chatbot Window Layout ── */
@@ -1688,7 +1805,7 @@ footer {
   z-index: 10;
 }
 
-/* maximized state (Prasshanna full layout) */
+/* maximized state (Custom full layout) */
 .chatbot-panel-inline.maximized {
   max-height: 680px;
   height: 680px;
@@ -1749,7 +1866,7 @@ footer {
   background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet));
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 30px rgba(255, 0, 122, 0.35),
-              0 0 20px rgba(138, 43, 226, 0.2);
+    0 0 20px rgba(138, 43, 226, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1762,7 +1879,7 @@ footer {
 .chatbot-minimized-trigger:hover {
   transform: scale(1.1) rotate(5deg);
   box-shadow: 0 15px 40px rgba(255, 0, 122, 0.5),
-              0 0 30px rgba(138, 43, 226, 0.4);
+    0 0 30px rgba(138, 43, 226, 0.4);
 }
 
 .chatbot-minimized-trigger i {
@@ -1782,8 +1899,13 @@ footer {
 }
 
 @keyframes floatWidget {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-6px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-6px);
+  }
 }
 
 /* ── 4. Interactive Welcome Card ── */
@@ -1794,7 +1916,7 @@ footer {
   padding: 1.2rem;
   width: 100%;
   margin-top: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .welcome-card-header {
@@ -1862,7 +1984,7 @@ footer {
   background: #ffffff;
   border-color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .welcome-option-icon {
@@ -1881,7 +2003,7 @@ footer {
 .welcome-option-card:hover .welcome-option-icon {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 0 10px rgba(213,0,28,0.2);
+  box-shadow: 0 0 10px rgba(213, 0, 28, 0.2);
 }
 
 .welcome-option-title {
@@ -1925,7 +2047,7 @@ footer {
   background: rgba(14, 8, 24, 0.85);
   border: 1px solid var(--border-color);
   border-radius: 30px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   padding: 0.5rem;
   backdrop-filter: blur(12px);
@@ -1934,8 +2056,15 @@ footer {
 }
 
 @keyframes slideUpFade {
-  from { opacity: 0; transform: translate(-50%, 40px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, 40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
 
 .sticky-chat-form {
@@ -1979,8 +2108,15 @@ footer {
 }
 
 @keyframes slideUpOverlay {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Floating chat overlay state */
@@ -2006,7 +2142,8 @@ footer {
 }
 
 /* Prevent horizontal overflow on html and body */
-html, body {
+html,
+body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
@@ -2014,6 +2151,7 @@ html, body {
 
 /* Mobile Responsive Styling Overrides */
 @media (max-width: 768px) {
+
   /* Header mobile */
   header {
     top: 0;
@@ -2021,7 +2159,8 @@ html, body {
 
   .nav-container {
     padding: 0 1.2rem;
-    justify-content: flex-end; /* Keep hamburger on the right */
+    justify-content: flex-end;
+    /* Keep hamburger on the right */
   }
 
   .menu-btn {
@@ -2033,9 +2172,11 @@ html, body {
   .menu-btn.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
+
   .menu-btn.open span:nth-child(2) {
     opacity: 0;
   }
+
   .menu-btn.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
@@ -2061,7 +2202,7 @@ html, body {
     right: 0;
   }
 
-  /* Hero mobile — Porsche editorial left-aligned */
+  /* Hero mobile — Premium editorial left-aligned */
   #hero {
     min-height: 100vh;
     padding: 0 1.5rem 5rem;
@@ -2164,10 +2305,10 @@ html, body {
 
 /* Fix iOS Safari auto-zoom on inputs by forcing 16px font size on mobile */
 @media (max-width: 768px) {
+
   .chatbot-panel-inline .chat-input-area input,
   .chat-input-area input,
   .sticky-chat-form input {
     font-size: 16px !important;
   }
 }
-
