@@ -28,10 +28,14 @@ async function ingestData() {
   }
 
   // 2. Connect to Pinecone and Gemini
-  const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
-  const pineconeIndex = pc.Index(process.env.PINECONE_INDEX);
+  const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY as string });
+  const pineconeIndex = pc.Index(process.env.PINECONE_INDEX as string);
   
-  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  console.log('Wiping old data from Pinecone database...');
+  await pineconeIndex.deleteAll();
+  console.log('Old data deleted successfully.');
+
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
   const embedModel = genAI.getGenerativeModel({ model: 'gemini-embedding-2' });
 
   // 3. Find the PDF file in the knowledgebase folder

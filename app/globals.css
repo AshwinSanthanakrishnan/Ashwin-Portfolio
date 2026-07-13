@@ -129,9 +129,10 @@ h2 {
   margin-bottom: 4rem;
   text-align: center;
   position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
   color: var(--text-main);
   background: linear-gradient(135deg, var(--text-main) 40%, var(--text-muted) 100%);
   -webkit-background-clip: text;
@@ -2035,6 +2036,14 @@ html, body {
 @media (max-width: 640px) {
   .contact-options-grid {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Fix iOS Safari auto-zoom on inputs by forcing 16px font size on mobile */
+@media (max-width: 768px) {
+  .chatbot-panel-inline .chat-input-area input,
+  .chat-input-area input {
+    font-size: 16px !important;
   }
 }
 
