@@ -1,6 +1,7 @@
 import { Pinecone } from '@pinecone-database/pinecone';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf';
+import { Document } from '@langchain/core/documents';
 import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -38,24 +39,44 @@ async function ingestData() {
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
   const embedModel = genAI.getGenerativeModel({ model: 'gemini-embedding-2' });
 
-  // 3. Find the PDF file in the knowledgebase folder
-  const files = fs.readdirSync(KNOWLEDGEBASE_DIR);
-  const pdfFiles = files.filter(file => file.endsWith('.pdf'));
+  // 3. Find all supported files in the knowledgebase folder (including subfolders)
+  const getAllFiles = (dirPath: string, arrayOfFiles: string[] = []) => {
+    const files = fs.readdirSync(dirPath);
+    files.forEach((file) => {
+      const fullPath = path.join(dirPath, file);
+      if (fs.statSync(fullPath).isDirectory()) {
+        arrayOfFiles = getAllFiles(fullPath, arrayOfFiles);
+      } else if (file.match(/\.(pdf|md|txt)$/i)) {
+        arrayOfFiles.push(fullPath);
+      }
+    });
+    return arrayOfFiles;
+  };
 
-  if (pdfFiles.length === 0) {
-    console.log('No PDF files found in knowledgebase folder.');
+  const targetFiles = getAllFiles(KNOWLEDGEBASE_DIR);
+
+  if (targetFiles.length === 0) {
+    console.log('No supported files (PDF, MD, TXT) found in knowledgebase folder.');
     return;
   }
-  console.log(`Found ${pdfFiles.length} PDF(s). Loading...`);
+  console.log(`Found ${targetFiles.length} file(s). Loading...`);
 
-  // 4. Read the text out of the PDF file
+  // 4. Read the text out of the files
   let allDocs: any[] = [];
-  for (const file of pdfFiles) {
-    const filePath = path.join(KNOWLEDGEBASE_DIR, file);
-    const loader = new PDFLoader(filePath);
-    const docs = await loader.load();
-    console.log(`Loaded ${file} - ${docs.length} page(s)`);
-    allDocs = allDocs.concat(docs);
+  for (const filePath of targetFiles) {
+    const file = path.basename(filePath);
+
+    if (file.toLowerCase().endsWith('.pdf')) {
+      const loader = new PDFLoader(filePath);
+      const docs = await loader.load();
+      console.log(`Loaded ${file} - ${docs.length} section(s)`);
+      allDocs = allDocs.concat(docs);
+    } else if (file.toLowerCase().match(/\.(md|txt)$/)) {
+      const text = fs.readFileSync(filePath, 'utf-8');
+      const doc = new Document({ pageContent: text, metadata: { source: filePath } });
+      console.log(`Loaded ${file} - 1 section(s)`);
+      allDocs.push(doc);
+    }
   }
 
   // 5. Split the massive block of text into smaller paragraphs
