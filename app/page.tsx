@@ -617,8 +617,10 @@ export default function Home() {
         <div className="skills-container">
           {/* AI Tools */}
           <div className="skills-category glass-panel">
-            <h3><i className="fa-solid fa-robot" style={{ color: 'var(--accent-cyan)' }}></i> AI Tools</h3>
+            <h3><i className="fa-solid fa-robot" style={{ color: 'var(--accent-cyan)' }}></i> AI Tools & Frameworks</h3>
             <div className="skills-list">
+              <span className="skill-tag">Rag</span>
+              <span className="skill-tag">LangChain</span>
               <span className="skill-tag">Cursor AI</span>
               <span className="skill-tag">Claude AI</span>
               <span className="skill-tag">OpenAI Codex</span>
@@ -666,6 +668,8 @@ export default function Home() {
               <span className="skill-tag">Google Ads</span>
               <span className="skill-tag">Meta Ads</span>
               <span className="skill-tag">Amazon Ads</span>
+              <span className="skill-tag">Versal</span>
+              <span className="skill-tag">Twilio</span>
             </div>
           </div>
 
@@ -678,6 +682,7 @@ export default function Home() {
               <span className="skill-tag">MySQL</span>
               <span className="skill-tag">SQLite</span>
               <span className="skill-tag">PostgreSQL</span>
+              <span className="skill-tag">Pinecone</span>
             </div>
           </div>
 
