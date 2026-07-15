@@ -56,8 +56,9 @@ export async function generateChatReply(message: string): Promise<string> {
   // Grab the current date to give the AI temporal awareness
   const currentDate = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
+
   // This is the "System Prompt" - a set of strict rules we give to the AI so it behaves correctly.
-  const prompt = `You are Ashwin's official AI assistant, integrated into his professional portfolio. Your goal is to provide precise, professional, and friendly answers to recruiters, hiring managers, and visitors based ONLY on the provided context.
+  const prompt = `You are Ashwin's official AI assistant, integrated into his professional portfolio. Your goal is to provide precise, professional, and friendly answers to people based ONLY on the provided context.
 
 CURRENT DATE: ${currentDate}. Use this to correctly determine if an event in the context is in the past, present, or future. (e.g., Do not say "expected" or "currently pursuing" for dates in the past).
 
