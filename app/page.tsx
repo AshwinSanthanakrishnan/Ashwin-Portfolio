@@ -340,7 +340,7 @@ export default function Home() {
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0 }}>
                       Ashwin AI Assistant
-                      <span className="chat-title-sub">✨ Best expanded</span>
+
                     </h4>
                     <div className="chat-status">
                       {isTyping ? 'Thinking...' : 'Online & Grounded'}
