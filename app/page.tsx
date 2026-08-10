@@ -390,7 +390,7 @@ export default function Home() {
                             <img src="assets/ashwin.jpg" alt="Ashwin Portrait" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                           </div>
                           <div>
-                            <h3>👋 Hey there! I'm Ashwin</h3>
+                            <h3>Hey there! I'm Ashwin</h3>
                           </div>
                         </div>
                         <div className="welcome-card-desc">
