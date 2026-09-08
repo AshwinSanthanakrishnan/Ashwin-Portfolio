@@ -387,7 +387,7 @@ export default function Home() {
                       <div key={index} className="welcome-card-wrapper" style={{ alignSelf: 'center', width: '100%', maxWidth: '100%', margin: '0 auto', textAlign: 'center' }}>
                         <div className="welcome-card-header" style={{ justifyContent: 'center' }}>
                           <div style={{ width: '40px', height: '40px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--accent-rose)', flexShrink: 0 }}>
-                            <img src="assets/ashwin.jpg" alt="Ashwin Portrait" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/assets/ashwin.jpg" alt="Ashwin Portrait" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                           </div>
                           <div>
                             <h3>Hey there! I'm Ashwin</h3>
@@ -453,7 +453,7 @@ export default function Home() {
                       <div key={index} className="welcome-card-wrapper" style={{ alignSelf: 'center', width: '100%', maxWidth: '100%', margin: '0.5rem auto 0 auto', textAlign: 'center' }}>
                         <div className="welcome-card-header" style={{ justifyContent: 'center' }}>
                           <div style={{ width: '40px', height: '40px', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--accent-rose)', flexShrink: 0 }}>
-                            <img src="assets/ashwin.jpg" alt="Ashwin Portrait" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/assets/ashwin.jpg" alt="Ashwin Portrait" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                           </div>
                           <div>
                             <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-main)' }}>Connect with Ashwin</h3>
