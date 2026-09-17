@@ -212,9 +212,9 @@ export default function Home() {
         body: JSON.stringify({ message: queryText })
       });
       const data = await res.json();
-      
+
       setIsTyping(false);
-      
+
       // Smart check for contact card token anywhere in the response
       const replyText = data.reply || "I'm sorry, I encountered an error connecting to my database.";
       const finalReply = replyText.includes('__CONTACT_CARD__') ? '__CONTACT_CARD__' : replyText;
