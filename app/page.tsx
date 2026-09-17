@@ -727,7 +727,7 @@ export default function Home() {
               <h3>AI and Software Engineering Intern</h3>
               <span className="timeline-company">Ark Infotech LLC | MD</span>
               <ul>
-                <li><strong>Voice AI & Orchestration:</strong> Built a trilingual AI voice agent (English, Russian, Georgian) using Twilio and Retell, architecting backend blueprints to automate inbound call handling and appointment scheduling.</li>
+                <li><strong>Voice AI & Orchestration:</strong> Built a trilingual AI voice agent (English, Russian, Georgian) using Twilio and Vapi AI, architecting backend blueprints to automate inbound call handling and appointment scheduling.</li>
                 <li><strong>RAG Chatbot & Vector DB:</strong> Developed a RAG-based lead capture chatbot with query routing logic and connected a vector database serving 5,000+ client records.</li>
                 <li><strong>Systems Architecture & Automation:</strong> Packaged the Maryland Judiciary Operational Plan into a portable Power Platform solution and automated SharePoint database replication using PnP PowerShell.</li>
               </ul>
