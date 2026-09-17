@@ -637,10 +637,14 @@ export default function Home() {
             <h3><i className="fa-solid fa-code" style={{ color: 'var(--accent-cyan)' }}></i> Programming Languages</h3>
             <div className="skills-list">
               <span className="skill-tag">Python</span>
+              <span className="skill-tag">TypeScript</span>
+              <span className="skill-tag">React</span>
               <span className="skill-tag">DAX</span>
               <span className="skill-tag">SQL</span>
               <span className="skill-tag">JavaScript</span>
               <span className="skill-tag">R</span>
+              <span className="skill-tag">Power Query</span>
+              <span className="skill-tag">Microsoft Power Fx</span>
             </div>
           </div>
 
