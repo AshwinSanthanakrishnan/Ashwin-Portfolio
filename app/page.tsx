@@ -720,7 +720,7 @@ export default function Home() {
             <div className="timeline-badge"></div>
             <div className="timeline-content glass-panel">
               <span className="timeline-date">June 2026 - August 2026</span>
-              <h3>AI and Software Engineer</h3>
+              <h3>AI and Software Engineering Intern</h3>
               <span className="timeline-company">Ark Infotech LLC | MD</span>
               <ul>
                 <li><strong>Voice AI & Orchestration:</strong> Built a trilingual AI voice agent (English, Russian, Georgian) using Twilio and Retell, architecting backend blueprints to automate inbound call handling and appointment scheduling.</li>
